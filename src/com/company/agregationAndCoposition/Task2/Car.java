@@ -1,17 +1,19 @@
 package com.company.agregationAndCoposition.Task2;
 
-public class Car  { // может быть правильнее сделать водителя интерфейсом?
+public class Car  {
 
     private WheelSet wheelSet;
     private String model;
     private boolean isMoving = false;
     private Engine engine = new Engine();
+    private FuelTank fuelTank;
 
     // constructor
     public Car(String model) {
         this.model = model;
         this.engine.setEngineInCar(true);
         this.wheelSet = new WheelSet();
+        this.fuelTank = new FuelTank(0);
     }
 
     public Engine getEngine() {
@@ -45,4 +47,13 @@ public class Car  { // может быть правильнее сделать �
     public void setWheelSet(WheelSet wheelSet) {
         this.wheelSet = wheelSet;
     }
+
+    public FuelTank getFuelTank () {
+        return this.fuelTank;
+    }
+
+    public void setFuelTank(FuelTank fuelTank) {
+        this.fuelTank = fuelTank;
+    }
+
 }

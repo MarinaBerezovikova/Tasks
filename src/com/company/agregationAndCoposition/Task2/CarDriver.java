@@ -1,8 +1,10 @@
 package com.company.agregationAndCoposition.Task2;
 
+import static com.company.agregationAndCoposition.Task2.FuelTank.fuelCapacity;
+
 public class CarDriver {
 
-    private boolean driverInCar = false;
+    private boolean driverInCar;
 
     public CarDriver(boolean driverInCar) {
         this.driverInCar = driverInCar;
@@ -43,8 +45,19 @@ public class CarDriver {
         }
     }
 
-    public void refill(int liters) {
-        System.out.println("Car has filled on " + liters + " litres.");
+    public void refill(Car car, int liters) {
+        int fuelAmount = car.getFuelTank().getFuelAmount();
+        System.out.println("Car has " + fuelAmount + " litres in the tank.");
+        int emptyAmount = fuelCapacity - fuelAmount;
+        if (emptyAmount > liters) {
+            fuelAmount += liters;
+            System.out.println("Car has filled on " + liters + " litres. There are " + fuelAmount + " in the tank.");
+        } else {
+            int litresForRefill = (fuelCapacity - fuelAmount);
+            fuelAmount += litresForRefill;
+            System.out.println("The tank is full. Car has filled on " + litresForRefill + " litres.");
+        }
+        car.getFuelTank().setFuelAmount(fuelAmount);
     }
 
     public void wheelReplace(Car car, int numberOfWheel) {
@@ -59,7 +72,7 @@ public class CarDriver {
         Wheel wheelNeedChange = car.getWheelSet().getWheelsArray().get(numberOfWheel);
         wheelNeedChange = new Wheel(wheelNeedChange.getWheel());
 
-        car.getWheelSet().getWheelsArray().set(numberOfWheel,wheelNeedChange);
+        car.getWheelSet().getWheelsArray().set(numberOfWheel, wheelNeedChange);
         System.out.println("The wheel has replaced.");
 
 //        ArrayList<Wheel> wc = car.getWheelSet().getWheelsArray(); // for check in the debug
