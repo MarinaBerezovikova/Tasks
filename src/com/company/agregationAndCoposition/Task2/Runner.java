@@ -15,11 +15,11 @@ public class Runner {
         System.out.println("We need to fill the car.");
         carDriver.refill(car, 30);
 
-        System.out.println("Driver has sit in te car.");
-        carDriver.move(car);
-
         System.out.println("We need to fill the car.");
         carDriver.refill(car, 50);
+
+        System.out.println("Driver has sit in te car.");
+        carDriver.move(car);
 
         System.out.println("Let's check the car. Is it still moving?" + " It's " + car.getIsMoving());
 
