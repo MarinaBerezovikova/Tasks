@@ -1,13 +1,12 @@
 package com.company.agregationAndCoposition.Task2;
 
-import static com.company.agregationAndCoposition.Task2.FuelTank.fuelCapacity;
+import java.util.ArrayList;
 
 public class CarDriver {
 
-    private boolean driverInCar;
+    private boolean driverInCar = false;
 
-    public CarDriver(boolean driverInCar) {
-        this.driverInCar = driverInCar;
+    public CarDriver() {
     }
 
     public boolean getDriverInCar() {
@@ -17,8 +16,6 @@ public class CarDriver {
     public void setDriverInCar(boolean driverInCar) {
         this.driverInCar = driverInCar;
     }
-
-    //methods
 
     public void move(Car car) {
         if (car.getIsMoving()) {
@@ -38,7 +35,7 @@ public class CarDriver {
             car.setMoving(false);
             System.out.println("Car has stopped. ");
         } else {
-            System.out.print("Car is staying already.");
+            System.out.println("Car is staying already.");
         }
         if (!this.driverInCar) {
             System.out.println("The driver is not in the car.");
@@ -48,12 +45,12 @@ public class CarDriver {
     public void refill(Car car, int liters) {
         int fuelAmount = car.getFuelTank().getFuelAmount();
         System.out.println("Car has " + fuelAmount + " litres in the tank.");
-        int emptyAmount = fuelCapacity - fuelAmount;
+        int emptyAmount = FuelTank.fuelCapacity - fuelAmount;
         if (emptyAmount > liters) {
             fuelAmount += liters;
             System.out.println("Car has filled on " + liters + " litres. There are " + fuelAmount + " in the tank.");
         } else {
-            int litresForRefill = (fuelCapacity - fuelAmount);
+            int litresForRefill = (FuelTank.fuelCapacity - fuelAmount);
             fuelAmount += litresForRefill;
             System.out.println("The tank is full. Car has filled on " + litresForRefill + " litres.");
         }
@@ -65,18 +62,23 @@ public class CarDriver {
             System.out.println("Because of car is moving, we can't replace the wheel.");
             return;
         }
-        if (numberOfWheel > WheelSet.ensureCountWheels) {
+        if (numberOfWheel > WheelSet.ensureCountWheels || numberOfWheel < 0) {
             System.out.println("This wheel is not exist.");
             return;
         }
-        Wheel wheelNeedChange = car.getWheelSet().getWheelsArray().get(numberOfWheel);
-        wheelNeedChange = new Wheel(wheelNeedChange.getWheel());
+        Wheel newWheel = new Wheel();
+        int newWheelState = car.getWheelSet().getWheelsArray().get(numberOfWheel).getWheelState() + 1;
+        newWheel.setWheelState(newWheelState);
 
-        car.getWheelSet().getWheelsArray().set(numberOfWheel, wheelNeedChange);
+        car.getWheelSet().getWheelsArray().set(numberOfWheel, newWheel);
+
         System.out.println("The wheel has replaced.");
 
-//        ArrayList<Wheel> wc = car.getWheelSet().getWheelsArray(); // for check in the debug
-
+        //show the wheel's state
+        ArrayList<Wheel> wheels = car.getWheelSet().getWheelsArray();
+        for (Wheel wheel1 : wheels) {
+            System.out.println(wheel1.getWheelState());
+        }
     }
 
     public static String sayACarModel(Car car) {

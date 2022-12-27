@@ -2,22 +2,16 @@ package com.company.agregationAndCoposition.Task2;
 
 public class Wheel {
 
-    private int wheel = 0;
-
-    // const default
+    private int wheelState = 0;
 
     public Wheel() {
     }
 
-    public Wheel(int newWheel) {
-        this.wheel += 1;
+    public int getWheelState() {
+        return wheelState;
     }
 
-    public int getWheel() {
-        return wheel;
-    }
-
-    public void setWheel(int wheel) {
-        this.wheel = wheel;
+    public void setWheelState(int wheelState) {
+        this.wheelState = wheelState;
     }
 }

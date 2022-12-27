@@ -8,7 +8,6 @@ public class Car  {
     private Engine engine = new Engine();
     private FuelTank fuelTank;
 
-    // constructor
     public Car(String model) {
         this.model = model;
         this.engine.setEngineInCar(true);
@@ -55,5 +54,4 @@ public class Car  {
     public void setFuelTank(FuelTank fuelTank) {
         this.fuelTank = fuelTank;
     }
-
 }
