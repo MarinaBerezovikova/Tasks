@@ -7,16 +7,15 @@ public class SentenceBuilder {
 
     public static String regexpOfWord = "\\w+";
 
-    static Sentence toBuildASentence(PartOfSentence... partsOfSentence) {
+    static Sentence toBuildASentence(SentencePart... partsOfSentence) {
 
         List<StringBuilder> sentence = new ArrayList<>();
-        StringBuilder result = new StringBuilder();
-
         Arrays.stream(partsOfSentence).forEach(partOfSentence -> sentence.add(partOfSentence.getContent()));
 
         ListIterator<StringBuilder> iterator = sentence.listIterator();
 
         boolean nextIsWord;
+        StringBuilder result = new StringBuilder();
         StringBuilder previous = new StringBuilder();
         StringBuilder current;
 

@@ -1,11 +1,6 @@
 package com.company.agregationAndCoposition.Task1;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Sentence {
-
-    private List<PartOfSentence> content = new ArrayList<PartOfSentence>();
 
     private String sentence;
 

@@ -1,7 +1,6 @@
 package com.company.agregationAndCoposition.Task1;
 
-
-public class Word implements PartOfSentence {
+public class Word implements SentencePart {
 
     private final String word;
 

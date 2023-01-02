@@ -4,8 +4,8 @@ public class Title {
 
     Sentence title;
 
-    public Title(PartOfSentence... partOfSentences) {
-        title = SentenceBuilder.toBuildASentence(partOfSentences);
+    public Title(SentencePart... sentenceParts) {
+        title = SentenceBuilder.toBuildASentence(sentenceParts);
     }
 
     public Sentence getTitle() {
