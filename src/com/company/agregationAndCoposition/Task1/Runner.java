@@ -4,24 +4,24 @@ public class Runner {
 
     public static void main(String[] args) {
 
-        PartOfSentence word = new Word("I");
-        PartOfSentence word1 = new Word("really");
-        PartOfSentence word2 = new Word("change");
-        PartOfSentence word3 = new Word("my");
-        PartOfSentence word4 = new Word("life");
-        PartOfSentence punctuation = new Punctuation("!");
+        SentencePart word = new Word("I");
+        SentencePart word1 = new Word("really");
+        SentencePart word2 = new Word("change");
+        SentencePart word3 = new Word("my");
+        SentencePart word4 = new Word("life");
+        SentencePart punctuation = new Punctuation("!");
 
-        PartOfSentence word5 = new Word("I");
-        PartOfSentence word6 = new Word("do");
-        PartOfSentence word7 = new Word("one");
-        PartOfSentence word8 = new Word("step");
-        PartOfSentence punctuation1 = new Punctuation(",");
-        PartOfSentence word9 = new Word("every");
-        PartOfSentence word10 = new Word("day");
-        PartOfSentence punctuation0 = new Punctuation("!");
+        SentencePart word5 = new Word("I");
+        SentencePart word6 = new Word("do");
+        SentencePart word7 = new Word("one");
+        SentencePart word8 = new Word("step");
+        SentencePart punctuation1 = new Punctuation(",");
+        SentencePart word9 = new Word("every");
+        SentencePart word10 = new Word("day");
+        SentencePart punctuation0 = new Punctuation("!");
 
-        PartOfSentence wordOfHead = new Word("My");
-        PartOfSentence wordOfHead0 = new Word("way");
+        SentencePart wordOfHead = new Word("My");
+        SentencePart wordOfHead0 = new Word("way");
 
         System.out.println("Let's create a new sentence from these words: ");
 
@@ -44,6 +44,7 @@ public class Runner {
         System.out.println("-----");
         TextShower.ShowText(title, text);
 
+        System.out.println("In the end we will add one more sentence: ");
         TextShower.ShowText(TextBuilder.addSentenceToText(text, new Sentence("It's cool!")));
     }
 }

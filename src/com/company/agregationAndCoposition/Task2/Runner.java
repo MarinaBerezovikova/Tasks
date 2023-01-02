@@ -8,8 +8,7 @@ public class Runner {
         CarDriver carDriver = new CarDriver();
         carDriver.setDriverInCar(true);
 
-        System.out.println("We has create a car. " + CarDriver.sayACarModel(car) + " Let's try to stop it.");
-        carDriver.stop(car);
+        System.out.println("We has create a car. " + CarDriver.sayACarModel(car));
 
         System.out.println("We need to fill the car.");
         carDriver.refill(car, 30);

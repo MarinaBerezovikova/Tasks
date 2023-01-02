@@ -1,6 +1,6 @@
 package com.company.agregationAndCoposition.Task1;
 
-public class Punctuation implements PartOfSentence {
+public class Punctuation implements SentencePart {
 
     private final String punctuation;
 
