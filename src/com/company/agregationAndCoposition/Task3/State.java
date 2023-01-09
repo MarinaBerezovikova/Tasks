@@ -3,14 +3,14 @@ package com.company.agregationAndCoposition.Task3;
 import java.util.ArrayList;
 import java.util.List;
 
-public class State {
-    private String name;
+public class State extends Area {
+
     private City capital;
     private List<Region> regions = new ArrayList<>();
     private double stateSquare;
 
     public State(String name, City capital) {
-        this.name = name;
+        super(name);
         this.capital = capital;
     }
 
@@ -18,16 +18,8 @@ public class State {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public City getCapital() {
         return capital;
-    }
-
-    public void setCapital(City capital) {
-        this.capital = capital;
     }
 
     public List<Region> getRegions() {

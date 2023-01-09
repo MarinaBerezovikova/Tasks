@@ -3,29 +3,20 @@ package com.company.agregationAndCoposition.Task3;
 import java.util.ArrayList;
 import java.util.List;
 
-public class District {
-    private String name;
-    private List <City> cities = new ArrayList<>();
-    private double districtSquare;
+public class District extends Area {
+
+    private List<City> cities = new ArrayList<>();;
 
     public District(String name) {
-        this.name = name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
+        super(name);
     }
 
     public double getDistrictSquare() {
-        return districtSquare;
+        return super.square;
     }
 
     public void setDistrictSquare(double districtSquare) {
-        this.districtSquare = districtSquare;
+        square = districtSquare;
     }
 
     public List<City> getCities() {

@@ -17,7 +17,7 @@ public class Shower {
         System.out.println("The state has " + countRegions + " regions." );
     }
     public void showRegionsCentres () {
-        System.out.println("The list of centres of regions: "); //нормально показать центры показываются как объекты
+        System.out.println("The list of centres of regions: ");
         for (Region region: state.getRegions()) {
             System.out.println(region.getRegionCenter().getName());
         }

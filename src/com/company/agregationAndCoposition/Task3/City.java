@@ -1,27 +1,16 @@
 package com.company.agregationAndCoposition.Task3;
 
-public class City {
-    private String name;
-    private double citySquare;
+public class City extends Area {
 
     public City(String name, double citySquare) {
-        this.name = name;
-        this.citySquare = citySquare;
+        super(name, citySquare);
     }
 
     public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+        return super.name;
     }
 
     public double getCitySquare() {
-        return citySquare;
-    }
-
-    public void setCitySquare(double citySquare) {
-        this.citySquare = citySquare;
+        return super.square;
     }
 }

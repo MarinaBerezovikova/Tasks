@@ -3,32 +3,18 @@ package com.company.agregationAndCoposition.Task3;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Region { //область
-    private String name;
+public class Region extends Area {
+
     private City regionCenter;
     private List<District> districts = new ArrayList<>();
-    private double regionSquare;
 
-    public Region (String name, City regionCenter) {
-        this.name = name;
-        this. regionCenter = regionCenter;
-
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public Region(String name, City regionCenter) {
+        super(name);
+        this.regionCenter = regionCenter;
     }
 
     public City getRegionCenter() {
         return regionCenter;
-    }
-
-    public void setRegionCenter(City regionCenter) {
-        this.regionCenter = regionCenter;
     }
 
     public List<District> getDistricts() {
@@ -40,10 +26,10 @@ public class Region { //область
     }
 
     public double getRegionSquare() {
-        return regionSquare;
+        return super.square;
     }
 
     public void setRegionSquare(double regionSquare) {
-        this.regionSquare = regionSquare;
+        this.square = regionSquare;
     }
 }
