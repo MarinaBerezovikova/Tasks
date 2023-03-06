@@ -1,7 +1,6 @@
 package com.company.agregationAndCoposition.Task3;
 
 public abstract class Area {
-    // для масштабирования можно создавать новые классы - населенные пункты
 
     protected String name;
     protected double square;

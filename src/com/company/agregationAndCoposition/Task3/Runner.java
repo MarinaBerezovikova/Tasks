@@ -43,9 +43,6 @@ public class Runner {
         editor.addToList(districtBeta, alphaBeta);
 
         calculator.calculateRegionSquare(alphaBeta);
-/////////////////////////////////////////////////////////////////////////////////////////////////
-
-
 
         //создание второй области, повторение действий первой области
         City cityOneG = new City("One", 489.7);
@@ -81,7 +78,6 @@ public class Runner {
         editor.addToList(districtDelta, BetaGamma);
 
         calculator.calculateRegionSquare(BetaGamma);
-/////////////////////////////////////////////////////////////////////////////////////////////////
 
         //создание государства
         State state = new State("Alphabet", cityRegionCenter);
@@ -96,6 +92,4 @@ public class Runner {
         shower.showRegionsCentres();
         shower.showStateSquare();
     }
-
-
 }

@@ -31,5 +31,4 @@ public class SquareCalculator {
         }
         state.setStateSquare(resultSquare);
     }
-
 }
