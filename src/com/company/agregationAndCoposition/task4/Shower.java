@@ -22,17 +22,15 @@ public class Shower {
                                              BigDecimal deptDollarBalance, BigDecimal deptEuroBalance,
                                              BigDecimal deptRubBalance) {
 
-        System.out.printf("""
-                        The total amounts of accounts:
-                        By dollar: %s\s
-                        By euro: %s
-                        By rub: %s
-
-                        The total  of debt amounts:
-                        By dollar: %s\s
-                        By euro: %s
-                        By rub: %s
-                        %n""", resultDollarBalance, resultEuroBalance, resultRubBalance, deptDollarBalance,
+        System.out.printf("The total amounts of accounts:\n" +
+                        "By dollar: %s \n" +
+                        "By euro: %s\n" +
+                        "By rub: %s\n" +
+                        "\n" +
+                        "The total  of debt amounts:\n" +
+                        "By dollar: %s \n" +
+                        "By euro: %s\n" +
+                        "By rub: %s\n%n", resultDollarBalance, resultEuroBalance, resultRubBalance, deptDollarBalance,
                 deptEuroBalance, deptRubBalance);
     }
 }
