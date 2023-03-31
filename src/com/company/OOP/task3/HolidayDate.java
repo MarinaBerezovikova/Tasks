@@ -1,19 +1,24 @@
-package com.company.OOP.Task3;
+package com.company.OOP.task3;
 
 import java.time.Month;
 import java.time.MonthDay;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Comparator;
-
-import static com.company.OOP.Task3.HolidayCalendar.HOLIDAY_DATES_MAP;
 
 public class HolidayDate {
+
     private MonthDay date;
     private String holidayName;
     private boolean isDayOff = false;
 
     private HolidayDate() {
+    }
+
+    public Month getMonthFromHD() {
+        return date.getMonth();
+    }
+
+    public int getDateFromHD() {
+        return date.getDayOfMonth();
     }
 
     public static class Builder {
@@ -39,24 +44,9 @@ public class HolidayDate {
         }
 
         public HolidayDate build() {
-            AddHolidayToList();
             return newDate;
         }
-
-        private void AddHolidayToList() {
-
-            Month monthOfNewHoliday = newDate.date.getMonth();
-            HOLIDAY_DATES_MAP.get(monthOfNewHoliday).add(newDate);
-            HOLIDAY_DATES_MAP.get(monthOfNewHoliday).sort(COMPARE_BY_DATA);
-        }
-
-        static private void sortHolidaysDates(ArrayList<HolidayDate> holidayDates) {
-            holidayDates.sort(COMPARE_BY_DATA);
-        }
     }
-
-    private static final Comparator<HolidayDate> COMPARE_BY_DATA =
-            Comparator.comparingInt(o -> o.date.getDayOfMonth());
 
     @Override
     public String toString() {
