@@ -1,4 +1,4 @@
-package com.company.OOP.Task2;
+package com.company.OOP.task2;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -10,10 +10,10 @@ public class Payment {
     private BigDecimal total = new BigDecimal(BigInteger.ZERO);
     private final List<Product> productList = new ArrayList<>();
 
-    static class Product {
+    static private class Product {
 
-        String name;
-        BigDecimal cost;
+        private final String name;
+        private final BigDecimal cost;
 
         public Product(String name, BigDecimal cost) {
             this.name = name;

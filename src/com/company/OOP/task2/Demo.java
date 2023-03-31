@@ -1,4 +1,4 @@
-package com.company.OOP.Task2;
+package com.company.OOP.task2;
 
 import java.math.BigDecimal;
 
